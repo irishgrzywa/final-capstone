@@ -71,7 +71,7 @@ function setDelay(difficulty) {
 function chooseHole(holes) {
     // TODO: Write your code here.
 
-    const choose = Math.floor(Math.random() * holes.length);
+    const choose = randomInteger(0, 8);
     const hole = holes[choose];
     if (hole.id === lastHole.id) {
         return chooseHole(holes);
@@ -103,7 +103,7 @@ function chooseHole(holes) {
 function gameOver() {
     // TODO: Write your code here
 
-    if (time) {
+    if (time > 0) {
         let timeoutId = showUp();
         return timeoutId;
     }
@@ -226,7 +226,7 @@ function startTimer() {
 * the moles.
 *
 */
-function whack(event) {
+function whack() {
     // TODO: Write your code here.
     updateScore();
     return points;
@@ -276,6 +276,7 @@ function stopGame() {
 *
 */
 function startGame() {
+    clearScore();
     setEventListeners();
     setDuration(10);
     showUp();

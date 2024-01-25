@@ -295,8 +295,7 @@ function startGame(){
   setDuration(10);
   showUp();
   startTimer();
-  showAndHide();
-  //setEventListeners();
+  setEventListeners();
   return "game started"; 
 }
 
